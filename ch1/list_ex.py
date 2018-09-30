@@ -29,11 +29,35 @@ for person in people: print(person[2])
     
 pays = [person[2] for person in people]
 
-pays
+NAME, AGE, PAY = range(3)
+bob = ['Bob Smith', 42, 10000]
+bob[NAME]
+PAY, bob[PAY]
 
-pays = map((lambda x: x[2]), people)
+bob =[['name', 'Bob Smith'], ['age', 42], ['pay', 10000] ]
+sue = [['name', 'Sue Smith'], ['age', 45], ['pay', 20000]]
+people = [bob, sue]
 
-list(pays)
+for person in people:
+    print(person[0][1], person[2][1])
+    
+[person[0][1] for person in people]
 
-sum(person[2] for person in people)
+for person in people:
+    print(person[0][1].split()[-1])
+    person[2][1] *= 1.10
+    
+for person in people: print(person[2])
 
+for person in people:
+    for (name, value) in person:
+        if name == 'name': print(value)
+        
+        
+def field(record, label):
+    for (fname, fvalue) in record:
+        if fname == label:
+            return fvalue
+        
+for rec in people:
+    print(field(rec, 'age'))
